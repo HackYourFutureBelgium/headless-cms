@@ -7,10 +7,16 @@ import Card from './components/Card';
 import { useState } from 'react';
 
 
-const cards = [1, 2, 3,];
+//const cards = ["Wolf 1", "Wolf  2" ,"Wolf  3" ];
+
+
+const cards = [
+  {backgroundColor:'red', key:'1', title:"Wolf 1"},
+  {backgroundColor:'green', key:"2", title:"Wolf 2"},
+  {backgroundColor:'yellow', key:"3", title: "Wolf 3"}]
 
 function App() {
-  const [message, setMessage] = useState("bloodhound");
+  const [message, setMessage] = useState("WEREWOLF PACK");
 
   console.log('RENDER APP');
  
@@ -27,11 +33,17 @@ function App() {
       </div>
       <h1>Vite + React</h1>
 
-      {cards.map((cardkey) =>(
-      <Card key={cardkey}title="Wolf"/>))}
+      {/* {cards.map((cardkey) =>(
+      <Card key={cardkey}title="Wolf"/>))} */}
+      {cards.map(({backgroundColor, key,title}) => (
+      <Card backgroundColor={backgroundColor} key={key} title={title}/>))}
 
       <p>{message}</p>
+    
+
     <button onClick={() => setMessage("UPDATE")}>update</button> 
+    
+  
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>

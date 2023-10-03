@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Card = ({title}) => {
+const Card = ({backgroundColor,title}) => {
     const [count, setCount] = useState(0);
     console.log('RENDER Card')
 
@@ -8,6 +8,7 @@ const Card = ({title}) => {
  <div className="card" >
     <h3>{title}</h3>
         <button 
+        style={{backgroundColor}}
         onClick={() =>{
             console.log("CLICK");
             console.log(count);
